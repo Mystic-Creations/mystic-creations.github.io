@@ -18,7 +18,7 @@
 	--font-ui: Inter, system-ui, -apple-system, Roboto, "Segoe UI", Arial;
 	--font-editor: "JetBrains Mono", "Consolas", "Courier New", monospace;
 
-	/* Sidenav sizing — tweak these to adjust collapsed/expanded width */
+	/* Sidenav sizing - tweak these to adjust collapsed/expanded width */
 	--nav-collapsed-width: 56px;
 	--nav-expanded-width: 200px;
 	--nav-transition: 0.22s cubic-bezier(0.4, 0, 0.2, 1);
@@ -47,7 +47,7 @@ body {
 	background-attachment: fixed;
 }
 
-/* Fixed Side Navigation */
+/* Sidenav */
 .sidenav {
 	position: fixed;
 	top: 0;
@@ -107,17 +107,6 @@ body {
 }
 .sidenav.expanded .sidenav-label { opacity: 1; }
 
-/* Logo in nav header - shown collapsed, hides label space */
-.sidenav-logo {
-	width: 24px;
-	height: 24px;
-	object-fit: contain;
-	flex-shrink: 0;
-	opacity: 1;
-	transition: opacity var(--nav-transition);
-}
-.sidenav.expanded .sidenav-logo { opacity: 0; width: 0; margin: 0; }
-
 /* Nav list */
 .sidenav-list {
 	list-style: none;
@@ -128,7 +117,7 @@ body {
 	gap: 4px;
 }
 
-/* Each nav button — same gradient-border trick as .tab */
+/* Nav buttons */
 .sidenav-btn {
 	display: flex;
 	align-items: center;
@@ -164,9 +153,7 @@ body {
 .sidenav-btn:hover::before,
 .sidenav-btn.active::before { opacity: 1; }
 
-.sidenav-btn:hover {
-	color: var(--text);
-}
+.sidenav-btn:hover { color: var(--text); }
 .sidenav-btn.active {
 	background: linear-gradient(to bottom, var(--tab-grad-light), var(--tab-grad-dark));
 	color: var(--tab-text-active);
@@ -176,13 +163,13 @@ body {
 /* Icon inside each button */
 .sidenav-icon {
 	flex-shrink: 0;
-	width: 24px;
-	height: 24px;
+	width: 22px;
+	height: 22px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
-.sidenav-icon svg { width: 20px; height: 20px; }
+.sidenav-icon svg { width: 22px; height: 22px; }
 
 /* Label text - hidden until expanded */
 .sidenav-text {
@@ -197,7 +184,7 @@ body {
 .page-wrap {
 	margin-left: var(--nav-collapsed-width);
 	transition: margin-left var(--nav-transition);
-	flex: 1 0 auto; /* grows to fill body, pushing footer down */
+	flex: 1 0 auto;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -207,12 +194,12 @@ body.nav-open .page-wrap {
 	margin-left: var(--nav-expanded-width);
 }
 
-/* card stretches to fill remaining space in page-wrap */
+/* Card stretches to fill remaining space */
 .page-wrap .card {
 	flex: 1 0 auto;
 }
 
-/* Site Header */
+/* Site header */
 .site-header {
 	width: 100%;
 	max-width: 950px;
@@ -227,7 +214,16 @@ body.nav-open .page-wrap {
 	letter-spacing: 0.08em;
 }
 
-/* Main Card */
+/* Logo above the WELCOME heading */
+.page-logo {
+	display: block;
+	width: 96px;
+	height: 96px;
+	object-fit: contain;
+	margin: 0 auto 12px;
+}
+
+/* Main card */
 .card {
 	background: var(--card-bg);
 	border-radius: 12px;
@@ -260,7 +256,7 @@ body.nav-open .site-footer {
 	margin-right: 6px;
 }
 
-/* Top section: brand + columns */
+/* Footer body */
 .footer-body {
 	display: flex;
 	flex-wrap: wrap;
@@ -336,7 +332,7 @@ body.nav-open .site-footer {
 }
 .footer-col a:hover { color: var(--text); }
 
-/* Bottom bar: disclaimer */
+/* Disclaimer bar */
 .footer-bar {
 	border-top: 1px solid rgba(255,255,255,0.06);
 	padding: 12px 32px;
@@ -346,7 +342,7 @@ body.nav-open .site-footer {
 	letter-spacing: 0.03em;
 }
 
-/* Devdocs fixed button - same style as sidenav-btn */
+/* Devdocs fixed button */
 .devdocs-btn {
 	position: fixed;
 	bottom: 14px;
@@ -385,7 +381,6 @@ body.nav-open .site-footer {
 .devdocs-btn:hover::before { opacity: 1; }
 .devdocs-btn:hover {
 	color: var(--text);
-	/* expanded: match nav-expanded-width minus same offsets */
 	width: calc(var(--nav-expanded-width) - 12px);
 }
 
