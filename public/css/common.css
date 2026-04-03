@@ -1,3 +1,5 @@
+/* CODE COMMON ACROSS MOST PAGES */
+
 :root {
 	--bg: #16181C;
 	--card-bg: #26292F;
@@ -22,29 +24,6 @@
 	--nav-collapsed-width: 56px;
 	--nav-expanded-width: 200px;
 	--nav-transition: 0.22s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Reset */
-* { box-sizing: border-box; }
-
-/* Body */
-body {
-	margin: 0;
-	min-height: 100vh;
-	font-family: var(--font-ui);
-	background: var(--bg);
-	color: var(--text);
-	display: flex;
-	flex-direction: column;
-
-	/* Purple gradient from top - single shade */
-	background-image: linear-gradient(
-		to bottom,
-		color-mix(in srgb, var(--tab-grad-dark) 90%, var(--bg)) 0%,
-		color-mix(in srgb, var(--tab-outln-grad-dark) 20%, var(--bg)) 15%,
-		var(--bg) 50%
-	);
-	background-attachment: fixed;
 }
 
 /* Sidenav */
@@ -191,61 +170,6 @@ body {
 }
 body.nav-open .page-logo {
 	left: var(--nav-expanded-width);
-}
-
-/* Images */
-.specifically-render1 {
-	display: block;
-	margin: 12px auto;
-	width: 751px;
-	height: 239px;
-	object-fit: contain;
-}
-
-/* Page wrapper */
-.page-wrap {
-	margin-left: var(--nav-collapsed-width);
-	transition: margin-left var(--nav-transition);
-	flex: 1 0 auto;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	padding: 16px;
-}
-body.nav-open .page-wrap {
-	margin-left: var(--nav-expanded-width);
-}
-
-/* Card stretches to fill remaining space */
-.page-wrap .card {
-	flex: 1 0 auto;
-}
-
-/* Site header */
-.site-header {
-	width: 100%;
-	max-width: 950px;
-	padding: 0 4px 12px;
-	text-align: center;
-}
-.site-title {
-	margin: 0;
-	font-size: 2rem;
-	font-weight: 700;
-	color: var(--text);
-	letter-spacing: 0.08em;
-}
-
-/* Main card */
-.card {
-	margin: 16px 0;
-	background: var(--card-bg);
-	border-radius: 12px;
-	box-shadow: 0 6px 18px var(--shadow);
-	padding: 24px;
-	width: 75%;
-	max-width: 1500px;
-	min-height: 100px;
 }
 
 /* Footer - full width minus nav */
@@ -445,4 +369,11 @@ summary {
 	color: var(--spoiler-text);
 	padding: 8px 0;
 	margin: 0 0 -4px 0;
+}
+a {
+    color: var(--tab-outln-grad-light);
+    transition: color 0.15s;
+}
+a:hover {
+    color: var(--tab-text-active);
 }
