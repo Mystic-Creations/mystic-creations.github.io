@@ -184,13 +184,22 @@ body {
 	left: var(--nav-collapsed-width);
 	top: 0;
 	width: 96px;
-	height: 60px;
+	height: 88px;
 	object-fit: contain;
 	margin: 12px;
 	transition: left var(--nav-transition);
 }
 body.nav-open .page-logo {
 	left: var(--nav-expanded-width);
+}
+
+/* Images */
+.specifically-render1 {
+	display: block;
+	margin: 12px auto;
+	width: 751px;
+	height: 239px;
+	object-fit: contain;
 }
 
 /* Page wrapper */
@@ -234,9 +243,9 @@ body.nav-open .page-wrap {
 	border-radius: 12px;
 	box-shadow: 0 6px 18px var(--shadow);
 	padding: 24px;
-	width: 100%;
-	max-width: 950px;
-	min-height: 400px;
+	width: 75%;
+	max-width: 1500px;
+	min-height: 100px;
 }
 
 /* Footer - full width minus nav */
