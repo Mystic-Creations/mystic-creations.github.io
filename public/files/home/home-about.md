@@ -8,4 +8,4 @@ Originally founded by <a href="https://x.com/JustMiliVT">JustMiliVT</a> and stil
 <br>
 We love doing what we're doing, and thanks to our amazing community, contributors and collaborators we are where we stand today.
 
-<hr>
+<hr style="margin-top: 25px;">
