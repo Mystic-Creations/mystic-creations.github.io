@@ -13,9 +13,9 @@ body {
 
 	/* Fade-out to black */
 	background-image: linear-gradient(
-    	to bottom,
-    	var(--bg) 50%,
-    	#000 100%
+		to bottom,
+		var(--bg) 50%,
+		#000 100%
 	);
 	background-attachment: fixed;
 }
@@ -73,4 +73,116 @@ body.nav-open .page-wrap {
 	width: 75%;
 	max-width: 1500px;
 	min-height: 100px;
+}
+
+/* Projects grid - rows align so cards in the same row match height */
+.projects-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 14px;
+	margin-top: 8px;
+	align-items: stretch;
+}
+
+/* Individual project card */
+.proj-card {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	background: var(--card-bg);
+	border: 1px solid rgba(255,255,255,0.04);
+	border-radius: 10px;
+	padding: 12px;
+	text-decoration: none;
+	color: var(--text);
+	/* centered fading shadow */
+	box-shadow: 0 8px 24px rgba(0,0,0,0.7), 0 2px 6px rgba(0,0,0,0.5);
+	transition: box-shadow 0.2s, transform 0.2s;
+}
+.proj-card:hover {
+	box-shadow: 0 14px 36px rgba(0,0,0,0.85), 0 4px 10px rgba(0,0,0,0.6);
+	transform: translateY(-2px);
+	color: var(--text);
+}
+
+/* Top row: icon + title/summary */
+.proj-card-top {
+	display: flex;
+	gap: 10px;
+	align-items: flex-start;
+}
+.proj-icon {
+	width: 46px;
+	height: 46px;
+	border-radius: 8px;
+	object-fit: cover;
+	flex-shrink: 0;
+	background: var(--spoiler);
+}
+.proj-info {
+	display: flex;
+	flex-direction: column;
+	gap: 3px;
+	min-width: 0;
+}
+.proj-name {
+	font-weight: 700;
+	font-size: 14px;
+	color: var(--text);
+}
+.proj-summary {
+	margin: 0;
+	font-size: 12px;
+	color: var(--text-muted);
+	line-height: 1.4;
+	/* no clamp - let it expand the card */
+}
+
+/* Tag rows - loaders on top, categories below */
+.proj-tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 5px;
+}
+.proj-tags-loaders { margin-bottom: 2px; }
+.proj-tags-categories { margin-top: 0; }
+.proj-tag {
+	display: inline-flex;
+	align-items: center;
+	gap: 3px;
+	font-size: 11px;
+	color: var(--text-muted);
+	background: rgba(255,255,255,0.05);
+	border: 1px solid rgba(255,255,255,0.08);
+	border-radius: 20px;
+	padding: 2px 8px;
+}
+/* loader tag colors set inline via JS */
+.proj-tag-loader {
+	background: rgba(255,255,255,0.04);
+}
+
+/* Stats row */
+.proj-footer {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	margin-top: auto;
+	padding-top: 6px;
+	border-top: 1px solid rgba(255,255,255,0.05);
+}
+.proj-stat {
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	font-size: 11px;
+	color: var(--text-muted);
+}
+.proj-stat svg {
+	width: 13px;
+	height: 13px;
+	flex-shrink: 0;
+}
+.proj-updated {
+	margin-left: auto;
 }
