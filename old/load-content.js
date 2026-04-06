@@ -1,20 +1,3 @@
-// Home
-fetch('public/files/home/home-about.md')
-  .then(res => res.text())
-  .then(html => { document.getElementById('home-about').innerHTML = `<div>${html}</div>`; });
-
-fetch('public/files/home/home-projects.md')
-  .then(res => res.text())
-  .then(html => { document.getElementById('home-projects').innerHTML = `<div>${html}</div>`; });
-
-fetch('public/files/home/home-news.md')
-  .then(res => res.text())
-  .then(html => { document.getElementById('home-news').innerHTML = `<div>${html}</div>`; });
-
-fetch('public/files/home/home-dev.md') // temporary for development time
-  .then(res => res.text())
-  .then(html => { document.getElementById('home-dev').innerHTML = `<div>${html}</div>`; });
-
 // Contact
 fetch('public/files/contact/contact.md')
   .then(res => res.text())

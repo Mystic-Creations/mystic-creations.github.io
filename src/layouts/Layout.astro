@@ -1,0 +1,30 @@
+---
+import Sidebar from '../components/sidebar.astro';
+import Footer from '../components/footer.astro';
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta name="generator" content={Astro.generator} />
+    <link rel="icon" href="public/assets/favicon.png" type="image/png">
+    <link rel="stylesheet" href="public/css/common.css">
+    <link rel="stylesheet" href="public/css/homepage.css">
+    <title>Mystic Creations Team</title>
+	</head>
+	<body>
+
+    <Sidebar />
+
+    <div class="page-wrap">
+      <slot name="before-card" />
+      <main class="card">
+        <slot />
+      </main>
+    </div>
+
+		<Footer />
+
+	</body>
+</html>
