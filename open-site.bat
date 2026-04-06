@@ -1,2 +1,2 @@
-npx serve . -l 2137
+deno task dev --port 2137
 start http://localhost:2137
