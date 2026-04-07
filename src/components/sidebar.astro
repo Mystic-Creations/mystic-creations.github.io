@@ -1,3 +1,16 @@
+---
+export type SidebarActive = ''| 'home' | 'team' | 'news' | 'socials' | 'contact' | 'docs';
+
+interface Props {
+  active?: SidebarActive,
+}
+const { active } = Astro.props;
+
+function buttonClass(button: SideabarActive): string {
+  return 'sidenav-btn' + (button === active ? ' active' : '');
+}
+---
+
 <nav class="sidenav" id="sidenav">
   <div class="sidenav-header">
     <button class="sidenav-toggle" id="sidenavToggle" aria-label="Toggle navigation">
@@ -10,7 +23,7 @@
     <span class="sidenav-label" id="sidenavLabel">Navigation</span>
   </div>
 
-  <a href="/" class="sidenav-btn active" aria-label="Home">
+  <a href="/" class={ buttonClass('home') } aria-label="Home">
     <span class="sidenav-icon">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M3 12L12 3l9 9"/><path d="M9 21V12h6v9"/>
@@ -18,7 +31,7 @@
     </span>
     <span class="sidenav-text">Home</span>
   </a>
-  <a href="/meet-the-team" class="sidenav-btn" aria-label="Meet The Team">
+  <a href="/meet-the-team" class={ buttonClass('team') } aria-label="Meet The Team">
     <span class="sidenav-icon">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/>
@@ -27,7 +40,7 @@
     </span>
     <span class="sidenav-text">Meet The Team</span>
   </a>
-  <a href="/news" class="sidenav-btn" aria-label="News">
+  <a href="/news" class={ buttonClass('news') } aria-label="News">
     <span class="sidenav-icon">
       <!-- newspaper icon -->
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -37,7 +50,7 @@
     </span>
     <span class="sidenav-text">News</span>
   </a>
-  <a href="/socials" class="sidenav-btn" aria-label="Our Socials">
+  <a href="/socials" class={ buttonClass('socials') } aria-label="Our Socials">
     <span class="sidenav-icon">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
@@ -47,7 +60,7 @@
     </span>
     <span class="sidenav-text">Our Socials</span>
   </a>
-  <a href="/contact" class="sidenav-btn" aria-label="Contact">
+  <a href="/contact" class={ buttonClass('contact') } aria-label="Contact">
     <span class="sidenav-icon">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <rect x="2" y="4" width="20" height="16" rx="2"/>
@@ -59,7 +72,7 @@
   <div class="sidenav-spacer"></div>
 
   <!-- Developer Docs button -->
-  <a href="/dev-docs" class="sidenav-btn" aria-label="Developer Docs">
+  <a href="/dev-docs" class={ buttonClass('docs') } aria-label="Developer Docs">
     <span class="sidenav-icon">
       <!-- file-code icon -->
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">

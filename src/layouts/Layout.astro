@@ -1,6 +1,12 @@
 ---
-import Sidebar from '../components/sidebar.astro';
+import { default as Sidebar, SidebarActive } from '../components/sidebar.astro';
 import Footer from '../components/footer.astro';
+
+interface Props {
+	sidebarActive?: SidebarActive,
+	title?: string,
+}
+const { sidebarActive, title = 'Mystic Creations Team' } = Astro.props;
 ---
 
 <html lang="en">
@@ -11,11 +17,11 @@ import Footer from '../components/footer.astro';
     <link rel="icon" href="public/assets/favicon.png" type="image/png">
     <link rel="stylesheet" href="public/css/common.css">
     <link rel="stylesheet" href="public/css/homepage.css">
-    <title>Mystic Creations Team</title>
+    <title>{ title }</title>
 	</head>
 	<body>
 
-    <Sidebar />
+    <Sidebar active={ sidebarActive } />
 
     <div class="page-wrap">
       <slot name="before-card" />
