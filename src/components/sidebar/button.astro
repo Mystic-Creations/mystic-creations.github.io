@@ -1,0 +1,17 @@
+---
+interface Props {
+  name: string,
+  href: string,
+  isActive?: bool,
+}
+const { name, href, isActive = false } = Astro.props;
+
+const classes = 'sidenav-btn' + (isActive ? ' active' : '');
+---
+
+<a href={ href } class={ classes } aria-label={ name }>
+  <span class='sidenav-icon'>
+    <slot />
+  </span>
+  <span class="sidenav-text">{ name }</span>
+</a>
