@@ -1,0 +1,76 @@
+/* Nav buttons */
+.sidenav-btn {
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	width: 100%;
+	padding: 8px;
+	border-radius: 8px;
+	border: 2px solid transparent;
+	background: color-mix(in srgb, var(--tab-inactive-tint) var(--tab-inactive-tint-amount), var(--card-bg));
+	color: color-mix(in srgb, var(--tab-text-inactive-tint) var(--tab-text-inactive-tint-amount), var(--text-muted));
+	font-family: var(--font-ui);
+	font-size: 14px;
+	cursor: pointer;
+	text-decoration: none;
+	white-space: nowrap;
+	position: relative;
+	transition: color 0.15s, background 0.15s;
+}
+
+.sidenav-btn::before {
+	content: '';
+	position: absolute;
+	inset: -2px;
+	border-radius: 9px;
+	padding: 2px;
+	background: linear-gradient(to bottom, var(--tab-outln-grad-light), var(--tab-outln-grad-dark));
+	-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+	-webkit-mask-composite: xor;
+	mask-composite: exclude;
+	opacity: 0;
+	transition: opacity 0.15s;
+}
+.sidenav-btn:hover::before,
+.sidenav-btn.active::before { opacity: 1; }
+
+.sidenav-btn:hover { color: var(--text); }
+.sidenav-btn.active {
+	background: linear-gradient(to bottom, var(--tab-grad-light), var(--tab-grad-dark));
+	color: var(--tab-text-active);
+	font-weight: 600;
+}
+
+/* Icon inside each button */
+.sidenav-icon {
+	flex-shrink: 0;
+	width: 22px;
+	height: 22px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.sidenav-icon svg { width: 22px; height: 22px; }
+
+/* Label text - hidden until expanded */
+.sidenav-text {
+	opacity: 0;
+	transition: opacity var(--nav-transition);
+	pointer-events: none;
+	overflow: hidden;
+}
+.sidenav.expanded .sidenav-text { opacity: 1; }
+
+/* Sidenav spacer - fills space between main navigation and developer docs */
+.sidenav-spacer {
+	flex-grow: 1;
+}
+
+a {
+    color: var(--tab-outln-grad-light);
+    transition: color 0.15s;
+}
+a:hover {
+    color: var(--tab-text-active);
+}
