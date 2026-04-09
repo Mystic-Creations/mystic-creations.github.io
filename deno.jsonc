@@ -7,7 +7,7 @@
   "tasks": {
     "astro": "astro",
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro check && astro build",
     // Deno doesn't support `astro preview`, so this must be used instead
     // Broken on the version I'm using
     // "preview": "deno run --allow-net --allow-read --allow-env ./dist/server/entry.mjs",
