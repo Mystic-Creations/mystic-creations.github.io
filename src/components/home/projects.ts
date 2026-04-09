@@ -5,11 +5,6 @@ const UA = 'Lumynity-Studios/lumynity-studios-site (https://mystic-creations.git
 
 const CONTAINER = document.getElementById('projects-grid-container');
 
-/* Capitalize first letter of each word, handle hyphenated slugs like "game-mechanics" */
-function titleCase(str: string): string {
-  return str.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
-}
-
 // See https://docs.modrinth.com/api/operations/getuserprojects/
 interface ModrinthProject {
   slug: string,
@@ -40,7 +35,7 @@ function buildCard(project: ModrinthProject): HTMLElement {
     element.addLoader(l);
 
   for (const c of project.categories.concat(project.additional_categories))
-    element.addCategory(titleCase(c));
+    element.addCategory(c.replace('-', ' '));
 
   return element;
 }

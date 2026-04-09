@@ -129,8 +129,6 @@
   }
 
   /* Tag rows - loaders on top, categories below */
-  .proj-tags-loaders { margin-bottom: 2px; }
-  .proj-tags-categories { margin-top: 0; }
   .proj-tag {
   	display: inline-flex;
   	align-items: center;
@@ -141,12 +139,14 @@
   	border: 1px solid rgba(255,255,255,0.08);
   	border-radius: 20px;
   	padding: 2px 8px;
+    text-transform: capitalize;
   }
+  .proj-tags-loaders { margin-bottom: 2px; }
+  .proj-tags-categories { margin-top: 0; }
   /* loader tag colors set inline via JS */
   .proj-tag-loader {
   	background: rgba(255,255,255,0.04);
   }
-
   .proj-tag-loader-fabric {
     color: #dbb69b;
     border-color: #dbb69b96;
