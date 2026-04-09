@@ -62,7 +62,7 @@ function buildCard(p) {
   card.rel = 'noopener noreferrer';
   card.innerHTML = `
     <div class="proj-card-top">
-      <img class="proj-icon" src="${p.icon_url || 'public/assets/logo.png'}" alt="${name}" onerror="this.src='public/assets/logo.png'">
+      <img class="proj-icon" src="${p.icon_url || '/assets/logo.png'}" alt="${name}" onerror="this.src='/assets/logo.png'">
       <div class="proj-info">
         <span class="proj-name">${name}</span>
         <p class="proj-summary">${summary}</p>

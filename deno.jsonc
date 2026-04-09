@@ -16,8 +16,7 @@
   "nodeModulesDir": "auto",
   "imports": {
     "@astrojs/check": "npm:@astrojs/check@^0.9.8",
-    "@deno/astro-adapter": "npm:@deno/astro-adapter@^0.3.2",
-    "astro": "npm:astro@^6.1.4",
-    "typescript": "npm:typescript@^6.0.2"
+    "astro": "npm:astro@^6.1.5",
+    "typescript": "npm:typescript@^5.9.3"
   }
 }
