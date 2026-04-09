@@ -1,7 +1,7 @@
-// Fetches projects from Mystic Creations Team org on Modrinth (v3 API)
+// Fetches projects from Lumynity Studios org on Modrinth (v3 API)
 
-const MODRINTH_ORG = 'mystic-creations-team';
-const UA = 'Mystic-Creations/mystic-creations-site (https://mystic-creations.github.io)';
+const MODRINTH_ORG = 'lumynity-studios';
+const UA = 'Lumynity-Studios/lumynity-studios-site (https://mystic-creations.github.io)';
 
 function fmtNum(n) {
   return n >= 1000 ? (n / 1000).toFixed(1).replace(/\.0$/, '') + 'K' : n;
