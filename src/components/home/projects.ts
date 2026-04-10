@@ -5,31 +5,32 @@ const UA = 'Lumynity-Studios/lumynity-studios-site (https://mystic-creations.git
 
 const CONTAINER = document.getElementById('projects-grid-container');
 
-// See https://docs.modrinth.com/api/operations/getuserprojects/
+// See https://github.com/modrinth/code/blob/1a51e582970f9851051b9eb962f40f3371f0eb1f/apps/labrinth/src/models/v3/projects.rs#L19-L104
 interface ModrinthProject {
-  slug: string,
+  id: string,
+  slug?: string,
   name: string,
   summary: string,
   categories: string[],
   additional_categories: string[],
-  downloads: number,
-  icon_url?: string,
-  followers: number,
   loaders: string[],
   updated: string,
+  downloads: number,
+  followers: number,
+  icon_url?: string,
 }
 
 function buildCard(project: ModrinthProject): HTMLElement {
   const element = document.createElement('project-card') as ProjectCard;
 
-  element.slug = project.slug;
+  element.urlId = project.slug ?? project.id;
   element.name = project.name;
   element.summary = project.summary;
-  if (project.icon_url !== undefined)
-    element.icon = project.icon_url;
+  element.updated = new Date(project.updated);
   element.downloads = project.downloads;
   element.followers = project.followers;
-  element.updated = new Date(project.updated);
+  if (project.icon_url !== undefined)
+    element.icon = project.icon_url;
 
   for (const l of project.loaders)
     element.addLoader(l);

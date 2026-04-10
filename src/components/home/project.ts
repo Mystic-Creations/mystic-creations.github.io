@@ -23,12 +23,12 @@ export class ProjectCard extends HTMLElement {
   #root: HTMLAnchorElement;
   #nameElement: HTMLSpanElement;
   #summaryElement: HTMLParagraphElement;
-  #iconElement: HTMLImageElement;
+  #updatedElement: HTMLSpanElement;
   #downloadsElement: HTMLSpanElement;
   #followersElement: HTMLSpanElement;
-  #updatedElement: HTMLSpanElement;
+  #iconElement: HTMLImageElement;
 
-  static observedAttributes = ['slug', 'name', 'summary', 'icon', 'downloads', 'followers', 'updated'] as const;
+  static observedAttributes = ['url-id', 'name', 'summary', 'updated', 'downloads', 'followers', 'icon'] as const;
 
   constructor() {
     super();
@@ -41,14 +41,14 @@ export class ProjectCard extends HTMLElement {
     this.#root = shadowRoot.querySelector('.proj-card');
     this.#nameElement = shadowRoot.querySelector('.proj-name');
     this.#summaryElement = shadowRoot.querySelector('.proj-summary');
-    this.#iconElement = shadowRoot.querySelector('.proj-icon');
+    this.#updatedElement = shadowRoot.querySelector('[part=updated]');
     this.#downloadsElement = shadowRoot.querySelector('[part=downloads]');
     this.#followersElement = shadowRoot.querySelector('[part=followers]');
-    this.#updatedElement = shadowRoot.querySelector('[part=updated]');
+    this.#iconElement = shadowRoot.querySelector('.proj-icon');
   }
 
-  set slug(value: string) {
-    this.setAttribute('slug', value);
+  set urlId(value: string) {
+    this.setAttribute('url-id', value);
   }
 
   set name(value: string) {
@@ -59,8 +59,8 @@ export class ProjectCard extends HTMLElement {
     this.setAttribute('summary', value);
   }
 
-  set icon(value: string) {
-    this.setAttribute('icon', value);
+  set updated(value: Date) {
+    this.setAttribute('updated', fmtRelativeDate(value));
   }
 
   set downloads(value: number) {
@@ -71,13 +71,13 @@ export class ProjectCard extends HTMLElement {
     this.setAttribute('followers', fmtNum(value));
   }
 
-  set updated(value: Date) {
-    this.setAttribute('updated', fmtRelativeDate(value));
+  set icon(value: string) {
+    this.setAttribute('icon', value);
   }
 
   attributeChangedCallback(name: ProjectCardAttributes, _oldValue: string, newValue: string): void {
     switch (name) {
-      case 'slug':
+      case 'url-id':
         this.#root.href = `https://modrinth.com/project/${newValue}`;
         break;
 
@@ -90,8 +90,8 @@ export class ProjectCard extends HTMLElement {
         this.#summaryElement.textContent = newValue;
         break;
 
-      case 'icon':
-        this.#iconElement.src = newValue;
+      case 'updated':
+        this.#updatedElement.textContent = newValue;
         break;
 
       case 'downloads':
@@ -102,8 +102,8 @@ export class ProjectCard extends HTMLElement {
         this.#followersElement.textContent = newValue;
         break;
 
-      case 'updated':
-        this.#updatedElement.textContent = newValue;
+      case 'icon':
+        this.#iconElement.src = newValue;
         break;
 
       default:
