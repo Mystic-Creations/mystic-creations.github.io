@@ -186,12 +186,13 @@ body.nav-open .site-footer {
 	margin-left: var(--nav-expanded-width);
 }
 
-.footer-logo-img {
-	width: 50px;
+.footer-logo {
+	width: 164px;
+	height: 48px;
 	object-fit: contain;
 	vertical-align: middle;
-	margin-right: 2px;
-	margin-bottom: 5px;
+	margin-top: -5px;
+	margin-bottom: -10px;
 }
 
 /* Footer body */
