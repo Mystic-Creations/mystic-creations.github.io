@@ -5,7 +5,7 @@ const nav = document.getElementById('sidenav');
 const toggle = document.getElementById('sidenavToggle');
 const body = document.body;
 
-const STORAGE_KEY = 'mc-nav-open';
+const STORAGE_KEY = 'ls-nav-open';
 
 // Restore saved state on load
 if (localStorage.getItem(STORAGE_KEY) === 'true') {

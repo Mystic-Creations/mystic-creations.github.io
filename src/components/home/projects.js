@@ -1,7 +1,7 @@
 // Fetches projects from Lumynity Studios org on Modrinth (v3 API)
 
 const MODRINTH_ORG = 'lumynity-studios';
-const UA = 'Lumynity-Studios/lumynity-studios-site (https://mystic-creations.github.io)';
+const UA = 'Lumynity-Studios/lumynity-studios-site (https://lumynitystudios.github.io)';
 
 function fmtNum(n) {
   return n >= 1000 ? (n / 1000).toFixed(1).replace(/\.0$/, '') + 'K' : n;
@@ -23,9 +23,9 @@ const LOADER_STYLES = {
   quilt:    { color: '#c192f2', border: '#c192f296' },
 };
 
-const ICON_DOWNLOAD = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 8a1 1 0 0 1 1 1v2a1 1 0 0 0 1 1h3.293a.707.707 0 0 1 .5 1.207l-6.939 6.939a1.207 1.207 0 0 1-1.708 0l-6.94-6.94a.707.707 0 0 1 .5-1.206H8a1 1 0 0 0 1-1V9a1 1 0 0 1 1-1z"/><path d="M9 4h6"/></svg>`;
-const ICON_HEART    = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg>`;
-const ICON_CLOCK    = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 0 1 7.38 16.75"/><path d="M12 6v6l4 2"/><path d="M2.5 8.875a10 10 0 0 0-.5 3"/><path d="M2.83 16a10 10 0 0 0 2.43 3.4"/><path d="M4.636 5.235a10 10 0 0 1 .891-.857"/><path d="M8.644 21.42a10 10 0 0 0 7.631-.38"/></svg>`;
+const ICON_DOWNLOADS    = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 8a1 1 0 0 1 1 1v2a1 1 0 0 0 1 1h3.293a.707.707 0 0 1 .5 1.207l-6.939 6.939a1.207 1.207 0 0 1-1.708 0l-6.94-6.94a.707.707 0 0 1 .5-1.206H8a1 1 0 0 0 1-1V9a1 1 0 0 1 1-1z"/><path d="M9 4h6"/></svg>`;
+const ICON_FOLLOWERS    = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg>`;
+const ICON_LAST_UPDATED = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></svg>`;
 
 /* Capitalize first letter of each word, handle hyphenated slugs like "game-mechanics" */
 function titleCase(str) {
@@ -70,9 +70,9 @@ function buildCard(p) {
     </div>
     ${tagBlock}
     <div class="proj-footer">
-      <span class="proj-stat">${ICON_DOWNLOAD} ${fmtNum(p.downloads)}</span>
-      <span class="proj-stat">${ICON_HEART} ${p.followers}</span>
-      <span class="proj-stat proj-updated">${ICON_CLOCK} ${fmtDate(p.updated)}</span>
+      <span class="proj-stat">${ICON_DOWNLOADS} ${fmtNum(p.downloads)}</span>
+      <span class="proj-stat">${ICON_FOLLOWERS} ${p.followers}</span>
+      <span class="proj-stat proj-updated">${ICON_LAST_UPDATED} ${fmtDate(p.updated)}</span>
     </div>
   `;
   return card;

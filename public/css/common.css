@@ -187,11 +187,11 @@ body.nav-open .site-footer {
 }
 
 .footer-logo-img {
-	width: 60px;
-	/* height: 32px; */
+	width: 50px;
 	object-fit: contain;
 	vertical-align: middle;
-	margin-right: 6px;
+	margin-right: 2px;
+	margin-bottom: 5px;
 }
 
 /* Footer body */
