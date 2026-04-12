@@ -17,10 +17,16 @@
  
 /* Credits grid */
 .info-grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: start;
   gap: 10px;
   margin-bottom: 4px;
+}
+.info-grid-break {
+  grid-column: 1 / -1;
+  height: 0;
+  margin: 0;
 }
 .info-card {
   display: flex;
@@ -44,33 +50,6 @@
   text-decoration: none;
 }
 a.info-name:hover { color: var(--tab-text-active); }
- 
-/* Key-value rows */
-.info-list {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin-bottom: 4px;
-}
-.info-row {
-  display: flex;
-  align-items: baseline;
-  gap: 12px;
-  font-size: 13px;
-}
-.info-label {
-  color: var(--text-muted);
-  min-width: 100px;
-  flex-shrink: 0;
-  font-size: 12px;
-}
-.info-value {
-  color: var(--text);
-}
-.info-note {
-  color: var(--text-muted);
-  font-size: 11px;
-}
  
 /* Font previews */
 .font-preview-ui { font-family: var(--font-ui); }
