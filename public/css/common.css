@@ -17,12 +17,12 @@
 	--tab-text-active: #f0a8e8;
 	--spoiler: #34363C;
 	--spoiler-text: #B0BAC5;
-	--font-ui: Inter, system-ui, -apple-system, Roboto, "Segoe UI", Arial;
-	--font-editor: "JetBrains Mono", "Consolas", "Courier New", monospace;
+	--font-ui: "Noto Sans", Arial, Inter;
+	--font-editor: "JetBrains Mono", Arial, Inter, monospace;
 
 	/* Sidenav sizing - tweak these to adjust collapsed/expanded width */
 	--nav-collapsed-width: 56px;
-	--nav-expanded-width: 200px;
+	--nav-expanded-width: 180px;
 	--nav-transition: 0.22s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
