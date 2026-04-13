@@ -2,24 +2,31 @@
 import { getCollection, render } from 'astro:content';
 
 import Layout from '../layouts/Layout.astro';
+import { getPosts } from './news/index.json.ts';
 
-const posts = await getCollection('news');
-posts.sort((a, b) => a.id < b.id ? -1 : 1);
+const posts = await getPosts();
 
 const PRERENDER = 2;
-const clientIds = posts.splice(PRERENDER).map(({ id }) => id);
-
-const rendered = await Promise.all(posts.map(render))
+const rendered = await Promise.all(posts.slice(0, PRERENDER).map(render));
 ---
 
 <Layout sidebarActive='news'>
 
-  {rendered.map(({ Content }) => (
-    <Content />
-  ))}
+  <div id="Posts">
+    {rendered.map(({ Content }) => (
+      <article>
+        <Content />
+      </article>
+    ))}
+
+    <span id="Observer" data-prerendered={ PRERENDER }>
+  </div>
+  <script src='../scripts/news.ts'></script>
 
 </Layout>
 
-<script define:vars={{ posts: clientIds }}>
-const BASE_URL = '/news/';
-</script>
+<style>
+  #Posts {
+    display: contents;
+  }
+</style>
