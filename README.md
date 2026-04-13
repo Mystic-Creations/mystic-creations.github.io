@@ -1,4 +1,4 @@
-# lumynstudios.github.io
+# lumynity-studios.github.io
 About Lumynity Studios and a collection of documentations about our projects
 
 ## Commands
@@ -13,5 +13,5 @@ About Lumynity Studios and a collection of documentations about our projects
 
 | Alt Command              | Alt Action
 | :----------------------- | :------------------------------------------------------------------------ |
-| Run open-site.bat        | Installs dependencies if not installed, then starts local dev server      |
-| Run open-site.bat        | Starts local dev server at `localhost:2137` if dependencies are installed |
+| Run `open-site.bat`      | Installs dependencies if not installed, then starts local dev server      |
+| Run `open-site.bat`      | Starts local dev server at `localhost:2137` if dependencies are installed |
