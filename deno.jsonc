@@ -18,6 +18,7 @@
     "@std/http": "jsr:@std/http@^1.0.25",
     "@std/path": "jsr:@std/path@^1.1.4",
     "astro": "npm:astro@^6.1.5",
+    "sharp": "npm:sharp@^0.34.5",
     "typescript": "npm:typescript@^5.9.3"
   }
 }

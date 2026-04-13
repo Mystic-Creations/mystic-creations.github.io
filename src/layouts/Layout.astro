@@ -1,8 +1,10 @@
 ---
-//import type { SidebarActive } from '../components/sidebar.astro';
+import { Image } from 'astro:assets';
+
 import './layout.css';
 import { default as Sidebar, type SidebarActive } from '../components/sidebar.astro';
 import Footer from '../components/footer.astro';
+import wip from '../assets/wip.png';
 
 interface Props {
 	sidebarActive?: SidebarActive,
@@ -27,7 +29,9 @@ const { sidebarActive, title = 'Lumynity Studios' } = Astro.props;
     <div class="page-wrap">
       <slot name="before-card" />
       <main class="card">
-        <slot />
+        <slot>
+				  <Image src={ wip } alt="WIP" style={{ width: "100%", height: "auto" }} />
+				</slot>
       </main>
     </div>
 
