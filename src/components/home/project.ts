@@ -83,7 +83,6 @@ export class ProjectCard extends HTMLElement {
 
       case 'name':
         this.#nameElement.textContent = newValue;
-        console.log('Setting textContent of ', this.#nameElement, newValue);
         break;
 
       case 'summary':
@@ -111,20 +110,20 @@ export class ProjectCard extends HTMLElement {
     }
   }
 
-  addLoader(name: string): void {
+  addTag(name: string, slot: 'loaders' | 'categories', classes: string[] = []): void {
     const element = document.createElement('span');
     element.textContent = name;
-    element.slot = 'loaders';
-    element.className = `proj-tag proj-tag-loader proj-tag-loader-${name}`;
+    element.slot = slot;
+    element.className = ['proj-tag'].concat(classes).join(' ');
     this.appendChild(element);
   }
 
+  addLoader(name: string): void {
+    this.addTag(name, 'loaders', ['proj-tag-loader', `proj-tag-loader-${name}`])
+  }
+
   addCategory(name: string): void {
-    const element = document.createElement('span');
-    element.textContent = name;
-    element.slot = 'categories';
-    element.className = 'proj-tag';
-    this.appendChild(element);
+    this.addTag(name, 'categories')
   }
 }
 
