@@ -8,14 +8,15 @@
     "astro": "astro",
     "dev": "astro dev",
     "build": "astro check && astro build",
-    // Deno doesn't support `astro preview`, so this must be used instead
-    // Broken on the version I'm using
-    // "preview": "deno run --allow-net --allow-read --allow-env ./dist/server/entry.mjs",
+    "preview": "deno run --allow-net --allow-read preview.ts",
     "check": "astro check"
   },
   "nodeModulesDir": "auto",
   "imports": {
     "@astrojs/check": "npm:@astrojs/check@^0.9.8",
+    "@std/assert": "jsr:@std/assert@^1.0.19",
+    "@std/http": "jsr:@std/http@^1.0.25",
+    "@std/path": "jsr:@std/path@^1.1.4",
     "astro": "npm:astro@^6.1.5",
     "typescript": "npm:typescript@^5.9.3"
   }
