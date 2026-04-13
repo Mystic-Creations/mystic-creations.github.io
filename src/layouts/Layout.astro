@@ -1,6 +1,7 @@
 ---
-import Sidebar from '../components/sidebar.astro';
-import type { SidebarActive } from '../components/sidebar.astro';
+//import type { SidebarActive } from '../components/sidebar.astro';
+import './layout.css';
+import { default as Sidebar, type SidebarActive } from '../components/sidebar.astro';
 import Footer from '../components/footer.astro';
 
 interface Props {
@@ -16,8 +17,6 @@ const { sidebarActive, title = 'Lumynity Studios' } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<meta name="generator" content={Astro.generator} />
     <link rel="icon" href="/assets/favicon.png" type="image/png">
-    <link rel="stylesheet" href="/css/common.css">
-    <link rel="stylesheet" href="/css/homepage.css">
     <link rel="stylesheet" href="/css/site-info.css">
     <title>{ title }</title>
 	</head>
