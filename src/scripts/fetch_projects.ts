@@ -1,4 +1,4 @@
-import type { ProjectCard } from './project.ts';
+import type { ProjectCard } from './create_projects.ts';
 
 const MODRINTH_ORG = 'lumynity-studios';
 const UA = 'Lumynity-Studios/lumynity-studios-site (https://lumynity-studios.github.io)';

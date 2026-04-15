@@ -1,10 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-import About from '../components/home/about.astro';
 import Projects from '../components/home/projects.astro';
 import News from '../components/home/news.astro';
-import Dev from '../components/home/dev.astro';
 ---
 
 <Layout sidebarActive='home'>
@@ -14,10 +12,34 @@ import Dev from '../components/home/dev.astro';
     <h4 style="margin-top: -2px; margin-bottom: -5px;">TO</h4>
   </header>
 
-  <About />
+  <div>
+    <img src="/assets/render1.png" alt="Lumynity Studios Title Card" class="specifically-render1">
+    <hr>
+
+    <center><h2><u>About Us</u></h2></center>
+
+    <p>
+      Founded and led by <a href="https://x.com/JustMiliVT">JustMili</a>, Lumynity Studios is a "small" team of programmers, artists, 
+      writers, builders, translators and play-testers.<br>
+      We create whatever comes to our minds at the time and commit to it in the long run.<br>
+      <small>(not so small afterall, though many of us do take multiple jobs at once)</small><br>
+      <br>
+      We love doing what we're doing, and thanks to our amazing community, contributors and collaborators we are where we stand today.
+    </p>
+
+    <hr style="margin-top: 25px;">
+  </div>
+
+  <div>
+    <!-- Move PROJECTS here instead of an import -->
+  </div>
+
+  <div>
+    <!-- Move NEWS here instead of an import -->
+  </div>
+
   <Projects />
   <News />
-  <Dev />
 
 </Layout>
 

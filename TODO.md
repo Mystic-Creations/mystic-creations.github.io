@@ -1,0 +1,12 @@
+(Dev) TODO:
+- Add hover-over descriptors(?) to all the buttons when nav is closed
+- Add reading of https://modrinth.com/mod/create-totem-factory to Our Projects, add small label *"Collaborative Project"* under it on its mini card
+- Replace footer block text and logo with a tiny render1.png
+- Fix header right logo
+- Make socials (footer block) links open new tabs
+- Make the news page work - News will have their own mini cards with a specific layout
+  - Add some news to be read (Millie will write all the news)
+  - Load max 9 news mini cards in a 3x3 or 4x2 grid before "Show More"/"Show All" button
+- Add news preview to home page
+  - Preview max 3 in home
+- Make seperate layouts for hiring and dev docs pages
