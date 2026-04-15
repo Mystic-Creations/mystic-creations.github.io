@@ -1,5 +1,8 @@
 ---
+import { Image } from 'astro:assets';
+
 import './footer.css';
+import render2 from '../../assets/render2.png';
 ---
 
 <footer class="site-footer">
@@ -8,7 +11,10 @@ import './footer.css';
     <!-- Brand + socials -->
     <div class="footer-brand">
       <a href="/" class="footer-logo">
-        <img src="/assets/render2.png" alt="Lumynity Studios Logo" class="footer-logo">
+        <Image src={ render2 }
+          alt="Lumynity Studios Logo"
+          class="footer-logo"
+          width="164" />
       </a>
 
       <div class="footer-socials" style="margin-top: -6px;">
