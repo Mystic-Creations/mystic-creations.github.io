@@ -18,8 +18,7 @@ const { sidebarActive, title = 'Lumynity Studios' } = Astro.props;
 		<meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<meta name="generator" content={Astro.generator} />
-    <link rel="icon" href="/assets/favicon.png" type="image/png">
-    <link rel="stylesheet" href="/css/site-info.css">
+    <link rel="icon" href="/favicon.png" type="image/png">
     <title>{ title }</title>
 	</head>
 	<body>
@@ -30,7 +29,7 @@ const { sidebarActive, title = 'Lumynity Studios' } = Astro.props;
       <slot name="before-card" />
       <main class="card">
         <slot>
-				  <Image src={ wip } alt="WIP" style={{ width: "100%", height: "auto" }} />
+				  <Image src={ wip } alt="WIP" layout='constrained' />
 				</slot>
       </main>
     </div>

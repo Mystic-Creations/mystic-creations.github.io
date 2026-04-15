@@ -1,5 +1,5 @@
 ---
-import ProjectTemplate from './project.astro';
+import ProjectTemplate from './project-card.astro';
 ---
 
 <center><h2><u>Our Projects</u></h2></center>
@@ -12,7 +12,7 @@ import ProjectTemplate from './project.astro';
 
 <ProjectTemplate />
 
-<script src='./projects.ts'></script>
+<script src='./fetch-projects.ts'></script>
 
 {/* global style so that it does not depend on Astro attributes being set */}
 <style is:global>

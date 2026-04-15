@@ -1,8 +1,11 @@
 ---
+import { Image } from 'astro:assets';
+
 import Layout from '../layouts/Layout.astro';
 
 import Projects from '../components/home/projects.astro';
 import News from '../components/home/news.astro';
+import render1 from '../assets/render1.png';
 ---
 
 <Layout sidebarActive='home'>
@@ -13,7 +16,10 @@ import News from '../components/home/news.astro';
   </header>
 
   <div>
-    <img src="/assets/render1.png" alt="Lumynity Studios Title Card" class="specifically-render1">
+    <Image src={ render1 } priority
+      alt="Lumynity Studios Title Card"
+      class="specifically-render1"
+      width="751" layout='constrained' />
     <hr>
 
     <center><h2><u>About Us</u></h2></center>
