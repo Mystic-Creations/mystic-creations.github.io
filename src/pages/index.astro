@@ -4,7 +4,6 @@ import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 
 import Projects from '../components/home/projects.astro';
-import News from '../components/home/news.astro';
 import render1 from '../assets/render1.png';
 ---
 
@@ -40,12 +39,19 @@ import render1 from '../assets/render1.png';
     <!-- Move PROJECTS here instead of an import -->
   </div>
 
+  <Projects />
+
   <div>
     <!-- Move NEWS here instead of an import -->
-  </div>
 
-  <Projects />
-  <News />
+    <center><h2><u>News</u></h2></center>
+
+    <!-- Fetch only last added news article -->
+    <!-- Note for future: all articles will be stored individually as files in pages/news/article_name.md -->
+    <!-- Add button "Show More" -->
+
+    <hr>
+  </div>
 
 </Layout>
 

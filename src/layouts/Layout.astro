@@ -3,7 +3,7 @@ import { Image } from 'astro:assets';
 
 import './layout.css';
 import { default as Sidebar, type SidebarActive } from '../components/sidebar/sidebar.astro';
-import Footer from '../components/sidebar/button.astro';
+import Footer from '../components/footer/footer.astro';
 import wip from '../assets/wip.png';
 
 interface Props {
@@ -15,9 +15,9 @@ const { sidebarActive, title = 'Lumynity Studios' } = Astro.props;
 
 <html lang="en">
 	<head>
-		<meta charset="utf-8" />
+	<meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-		<meta name="generator" content={Astro.generator} />
+	<meta name="generator" content={Astro.generator} />
     <link rel="icon" href="/favicon.png" type="image/png">
     <title>{ title }</title>
 	</head>
@@ -29,12 +29,12 @@ const { sidebarActive, title = 'Lumynity Studios' } = Astro.props;
       <slot name="before-card" />
       <main class="card">
         <slot>
-				  <Image src={ wip } alt="WIP" layout='constrained' />
-				</slot>
+			<Image src={ wip } alt="WIP" layout='constrained' />
+		</slot>
       </main>
     </div>
 
-		<Footer />
+	<Footer />
 
 	</body>
 </html>
