@@ -1,12 +1,21 @@
-(Dev) TODO:
+TODO For Tom:
+- Improve News page article layout
 - Add hover-over descriptors(?) to all the buttons when nav is closed
-- Add reading of https://modrinth.com/mod/create-totem-factory to Our Projects, add small label *"Collaborative Project"* under it on its mini card
-- Replace footer block text and logo with a tiny render1.png
-- Fix header right logo
-- Make socials (footer block) links open new tabs
-- Make the news page work - News will have their own mini cards with a specific layout
-  - Add some news to be read (Millie will write all the news)
-  - Load max 9 news mini cards in a 3x3 or 4x2 grid before "Show More"/"Show All" button
-- Add news preview to home page
-  - Preview max 3 in home
+- Add fetching of https://modrinth.com/mod/create-totem-factory to Our Projects, add small label *"Collaborative Project"* under it on its mini card
+
+TODO For Izya:
+- Fix header-right logo to display a tiny render2
+- Add News articles preview on home page
 - Make seperate layouts for hiring and dev docs pages
+
+TODO For Millie:
+- Finish writing all articles
+- Make a script to fetch discord profile pictures for Meet The Team
+- Start writing content of more site pages
+
+TODO Unassigned:
+- Make socials (footer block) links open new tabs
+- Make everything put in the main card always stay in the card (Images, Our Projects cards etc)
+- Smooth out text movement animations when nav opens/closes
+- Make nav not close for split second when page refreshes
+- Make Our Projects cards and images not appear massive for split second when refreshing at high zoom
