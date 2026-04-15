@@ -14,10 +14,8 @@
 }
 
 /* Images */
-.specifically-render1 {
+.render1 {
 	display: block;
-	margin: 12px auto;
-	margin-top: -5px;
-	margin-bottom: 15px;
+	margin: auto auto 20px;
 	object-fit: contain;
 }
