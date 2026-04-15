@@ -60,14 +60,6 @@ body.nav-open .page-logo {
 	left: var(--nav-expanded-width);
 }
 
-/* Images */
-.specifically-render1 {
-	display: block;
-	margin: 12px auto;
-	margin-top: -15px;
-	object-fit: contain;
-}
-
 /* Page wrapper */
 .page-wrap {
 	margin-left: var(--nav-collapsed-width);

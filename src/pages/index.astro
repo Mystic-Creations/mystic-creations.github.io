@@ -1,4 +1,5 @@
 ---
+import '../page-css/home.css';
 import { Image } from 'astro:assets';
 
 import Layout from '../layouts/Layout.astro';
@@ -46,7 +47,7 @@ import render1 from '../assets/render1.png';
 
     <center><h2><u>News</u></h2></center>
 
-    <!-- Fetch only last added news article -->
+    <!-- Fetch only last 3 added news article -->
     <!-- Note for future: all articles will be stored individually as files in pages/news/article_name.md -->
     <!-- Add button "Show More" -->
 
@@ -54,20 +55,4 @@ import render1 from '../assets/render1.png';
   </div>
 
 </Layout>
-
-<style>
-  .site-header {
-  	width: 100%;
-  	max-width: 950px;
-  	padding: 0 4px 12px;
-  	text-align: center;
-  }
-  .site-title {
-  	margin: 0;
-  	font-size: 2rem;
-  	font-weight: 700;
-  	color: var(--text);
-  	letter-spacing: 0.08em;
-  }
-</style>
 

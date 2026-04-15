@@ -1,0 +1,23 @@
+/* Home Header */
+.site-header {
+	width: 100%;
+	max-width: 950px;
+	padding: 0 4px 12px;
+  	text-align: center;
+}
+.site-title {
+  	margin: 0;
+  	font-size: 2rem;
+  	font-weight: 700;
+  	color: var(--text);
+  	letter-spacing: 0.08em;
+}
+
+/* Images */
+.specifically-render1 {
+	display: block;
+	margin: 12px auto;
+	margin-top: -5px;
+	margin-bottom: 15px;
+	object-fit: contain;
+}
