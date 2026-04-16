@@ -1,0 +1,59 @@
+.contact-header {
+  width: 100%;
+  max-width: 950px;
+  padding: 0 4px 8px;
+  text-align: center;
+}
+
+.contact-title {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 0.08em;
+}
+
+.contact-above {
+  width: 75%;
+  max-width: 1500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 256px;
+  position: relative;
+  z-index: 2;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 550px 340px;
+  align-items: start;
+  justify-content: center;
+  width: 100%;
+}
+
+.mail-card {
+  grid-column: 1;
+  grid-row: 1;
+  min-height: 420px;
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 6px 18px var(--shadow);
+  padding: 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.other-contacts-card {
+  grid-column: 2;
+  grid-row: 1;
+  min-height: 360px;
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 6px 18px var(--shadow);
+  padding: 24px;
+  position: relative;
+  z-index: 1;
+  margin-top: 180px;
+  margin-left: -128px;
+}
