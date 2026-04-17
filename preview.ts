@@ -60,4 +60,6 @@ class Server {
   }
 }
 
-Deno.serve(new Server().handler);
+export default {
+  fetch: new Server().handler,
+};
