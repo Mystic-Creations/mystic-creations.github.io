@@ -27,6 +27,8 @@ jobs:
           deno-version: v2.x
 
       - name: Build site
+        env:
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
         run: "deno task build"
 
       - name: Upload artifact
