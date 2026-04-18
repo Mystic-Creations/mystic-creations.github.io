@@ -1,7 +1,6 @@
 TODO For Tom:
 - Improve News page article layout
 - Add hover-over descriptors(?) to all the buttons when nav is closed
-- Add fetching of https://modrinth.com/mod/create-totem-factory to Our Projects, add small label *"Collaborative Project"* under it on its mini card
 
 TODO For Izya:
 - Fix header-right logo to display a tiny render2

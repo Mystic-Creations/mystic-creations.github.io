@@ -20,15 +20,7 @@ function fmtNum(n: number): string {
 }
 
 export class ProjectCard extends HTMLElement {
-  #root: HTMLAnchorElement;
-  #nameElement: HTMLSpanElement;
-  #summaryElement: HTMLParagraphElement;
-  #updatedElement: HTMLSpanElement;
-  #downloadsElement: HTMLSpanElement;
-  #followersElement: HTMLSpanElement;
-  #iconElement: HTMLImageElement;
-
-  static observedAttributes = ['url-id', 'name', 'summary', 'updated', 'downloads', 'followers', 'icon'] as const;
+  static observedAttributes = ['url-id', 'name', 'important-info', 'summary', 'updated', 'downloads', 'followers', 'icon'] as const;
 
   constructor() {
     super();
@@ -37,14 +29,10 @@ export class ProjectCard extends HTMLElement {
       mode: 'open',
     });
     shadowRoot.appendChild(document.importNode(template.content, true));
+  }
 
-    this.#root = shadowRoot.querySelector('.proj-card');
-    this.#nameElement = shadowRoot.querySelector('.proj-name');
-    this.#summaryElement = shadowRoot.querySelector('.proj-summary');
-    this.#updatedElement = shadowRoot.querySelector('[part=updated]');
-    this.#downloadsElement = shadowRoot.querySelector('[part=downloads]');
-    this.#followersElement = shadowRoot.querySelector('[part=followers]');
-    this.#iconElement = shadowRoot.querySelector('.proj-icon');
+  get #root(): HTMLAnchorElement {
+    return this.shadowRoot.children[0] as HTMLAnchorElement;
   }
 
   set urlId(value: string) {
@@ -55,6 +43,10 @@ export class ProjectCard extends HTMLElement {
     this.setAttribute('name', value);
   }
 
+  set importantInfo(value: string) {
+    this.setAttribute('important-info', value);
+  }
+
   set summary(value: string) {
     this.setAttribute('summary', value);
   }
@@ -63,12 +55,17 @@ export class ProjectCard extends HTMLElement {
     this.setAttribute('updated', fmtRelativeDate(value));
   }
 
+  get downloads(): number {
+    const text = this.getAttribute('downloads');
+    return parseInt(text);
+  }
+
   set downloads(value: number) {
-    this.setAttribute('downloads', fmtNum(value));
+    this.setAttribute('downloads', value.toString());
   }
 
   set followers(value: number) {
-    this.setAttribute('followers', fmtNum(value));
+    this.setAttribute('followers', value.toString());
   }
 
   set icon(value: string) {
@@ -82,27 +79,34 @@ export class ProjectCard extends HTMLElement {
         break;
 
       case 'name':
-        this.#nameElement.textContent = newValue;
+      case 'summary':
+        this.#root.querySelector(`.proj-${name}`)
+          .textContent = newValue;
         break;
 
-      case 'summary':
-        this.#summaryElement.textContent = newValue;
+      case 'important-info': {
+        const element = this.#root.querySelector('[part=important-info]') as HTMLSpanElement;
+        element.textContent = newValue;
+        element.style.display = newValue ? 'unset' : 'none';
         break;
+      }
 
       case 'updated':
-        this.#updatedElement.textContent = newValue;
+        this.#root.querySelector('[part=updated]')
+          .textContent = newValue;
         break;
 
       case 'downloads':
-        this.#downloadsElement.textContent = newValue;
+      case 'followers': {
+        const num = parseInt(newValue);
+        this.#root.querySelector(`[part=${name}]`)
+          .textContent = isNaN(num) ? 'error' : fmtNum(num);
         break;
-
-      case 'followers':
-        this.#followersElement.textContent = newValue;
-        break;
+      }
 
       case 'icon':
-        this.#iconElement.src = newValue;
+        (this.#root.querySelector('.proj-icon') as HTMLImageElement)
+          .src = newValue;
         break;
 
       default:

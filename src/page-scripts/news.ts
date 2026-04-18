@@ -31,7 +31,7 @@ async function loadNextPost() {
 
   const response = await fetch(BASE_URL + id);
   let postText: string;
-  if (response.status < 400) {
+  if (response.ok) {
     postText = await response.text();
   } else {
     postText = `${response.status} - ${response.statusText}`;
