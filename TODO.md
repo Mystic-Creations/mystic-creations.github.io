@@ -2,6 +2,7 @@ TODO For Tom:
 - Make everything put in the main card always stay in the card (Images, Our Projects cards etc)
 - Fix header-right logo to display a tiny render2.svg or logo.svg
 - Add hover-over descriptors(?) to all the buttons when nav is closed
+- Change `overflow-wrap` on meet-the-team profiles to a better value
 
 TODO For Izya:
 - Add animations
