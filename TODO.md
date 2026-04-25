@@ -22,5 +22,7 @@ TODO Unassigned:
 - Make nav not close for split second when page refreshes
 - Make cards and images not appear massive for split second when refreshing at high zoom
 - Make the site's codebase not look like a mess and optimzie it
-- Move CSS out of .astro files
-  - That's advice from Millie's web design & developemnt teacher
+  - Properly use <header>, <footer>, <main>, <section>, <div> etc
+  - Move CSS out of .astro files
+    - That's advice from Millie's web design & developemnt teacher
+  - Optimize scripts
