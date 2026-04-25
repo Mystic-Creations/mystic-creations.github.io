@@ -1,5 +1,5 @@
 TODO For Tom:
-- Make everything put in the main card always stay in the card (Images, Our Projects cards etc)
+- Make images in news stay within the card
 - Fix header-right logo to display a tiny render2.svg or logo.svg
 - Add hover-over descriptors(?) to all the buttons when nav is closed
 - Change `overflow-wrap` on meet-the-team profiles to a better value
@@ -27,3 +27,4 @@ TODO Unassigned:
   - Move CSS out of .astro files
     - That's advice from Millie's web design & developemnt teacher
   - Optimize scripts
+- Create a mobile layout to use the full width for the content (navbar up top?, use CSS media queries)

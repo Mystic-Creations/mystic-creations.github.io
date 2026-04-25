@@ -19,7 +19,7 @@ import ProjectTemplate from './project-card.astro';
   /* Projects grid - rows align so cards in the same row match height */
   .projects-grid {
   	display: grid;
-  	grid-template-columns: repeat(3, 1fr);
+  	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   	gap: 14px;
   	margin-top: 8px;
   	align-items: stretch;
