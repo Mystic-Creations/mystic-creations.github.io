@@ -1,5 +1,4 @@
 TODO For Tom:
-- Make images in news stay within the card
 - Fix header-right logo to display a tiny render2.svg or logo.svg
 - Add hover-over descriptors(?) to all the buttons when nav is closed
 - Change `overflow-wrap` on meet-the-team profiles to a better value

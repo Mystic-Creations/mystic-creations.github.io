@@ -30,3 +30,10 @@ const rendered = await Promise.all(posts.slice(0, PRERENDER).map(render));
     display: contents;
   }
 </style>
+
+{/* global style so that it does not depend on Astro attributes being set */}
+<style is:global>
+  #Posts > article img {
+    max-width: 100%;
+  }
+</style>
