@@ -9,6 +9,7 @@
     "dev": "astro dev",
     "build": "astro check && astro build",
     "preview": "deno task build && deno serve --allow-read preview.ts",
+    "preview-open": "deno task build && deno serve --allow-read --open preview.ts",
     "check": "astro check"
   },
   "nodeModulesDir": "auto",

@@ -56,13 +56,14 @@ body {
 	margin: 12px;
 	transition: left var(--nav-transition);
 }
-body.nav-open .page-logo {
-	left: var(--nav-expanded-width);
+@media (orientation: landscape) {
+	body.nav-open .page-logo {
+		left: var(--nav-expanded-width);
+	}
 }
 
 /* Page wrapper */
 .page-wrap {
-	margin-left: var(--nav-collapsed-width);
 	transition: margin-left var(--nav-transition);
 	flex: 1 0 auto;
 	display: flex;
@@ -70,8 +71,13 @@ body.nav-open .page-logo {
 	align-items: center;
 	padding: 16px;
 }
-body.nav-open .page-wrap {
-	margin-left: var(--nav-expanded-width);
+@media (orientation: landscape) {
+	.page-wrap {
+		margin-left: var(--nav-collapsed-width);
+	}
+	body.nav-open .page-wrap {
+		margin-left: var(--nav-expanded-width);
+	}
 }
 
 /* Card stretches to fill remaining space */
@@ -86,9 +92,18 @@ body.nav-open .page-wrap {
 	border-radius: 12px;
 	box-shadow: 0 6px 18px var(--shadow);
 	padding: 24px;
-	width: 75%;
 	max-width: 1500px;
 	min-height: 100px;
+}
+@media (orientation: landscape) {
+	.card {
+		width: 75%;
+	}
+}
+@media (orientation: portrait) {
+	.card {
+		width: 100%;
+	}
 }
 
 /* Cosmetic */

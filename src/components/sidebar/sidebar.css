@@ -1,25 +1,46 @@
 /* Sidenav */
 .sidenav {
-	position: fixed;
 	top: 0;
 	left: 0;
-	height: 100vh;
-	width: var(--nav-collapsed-width);
 	background: color-mix(in srgb, var(--card-bg) 95%, transparent);
 	backdrop-filter: blur(8px);
-	border-right: 1px solid rgba(255,255,255,0.05);
 	display: flex;
-	flex-direction: column;
 	gap: 4px;
 	overflow: hidden;
 	padding: 6px;
-	transition: width var(--nav-transition);
 	z-index: 100;
 }
 
-/* Expanded state - toggled via JS adding .expanded to nav */
-.sidenav.expanded {
-	width: var(--nav-expanded-width);
+@media (orientation: landscape) {
+	.sidenav {
+		position: fixed;
+		width: var(--nav-collapsed-width);
+		height: 100vh;
+		border-right: 1px solid rgba(255,255,255,0.05);
+		flex-direction: column;
+		transition: width var(--nav-transition);
+	}
+
+	/* Expanded state - toggled via JS adding .expanded to nav */
+	.sidenav.expanded {
+		width: var(--nav-expanded-width);
+	}
+}
+
+@media (orientation: portrait) {
+	.sidenav {
+		width: 100vw;
+		/* height: var(--nav-collapsed-width); */
+		border-bottom: 1px solid rgba(255,255,255,0.05);
+		flex-direction: row;
+		flex-wrap: wrap;
+		transition: height var(--nav-transition);
+	}
+
+	/* Expanded state - toggled via JS adding .expanded to nav */
+	.sidenav.expanded {
+		height: unset;
+	}
 }
 
 /* Header row */
@@ -28,8 +49,14 @@
 	align-items: center;
 	gap: 10px;
 	padding: 8px 6px 4px;
-	min-height: 52px;
 	flex-shrink: 0;
+	gap: 0px;
+}
+
+@media (orientation: landscape) {
+	.sidenav-header {
+		min-height: 52px;
+	}
 }
 
 .sidenav-toggle {
@@ -60,25 +87,11 @@
 }
 .sidenav.expanded .sidenav-label { opacity: 1; }
 
-/* Icon inside each button */
-.sidenav-icon {
-	flex-shrink: 0;
-	width: 22px;
-	height: 22px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+@media (orientation: portrait) {
+	.sidenav:not(.expanded) .sidenav-label {
+		width: 0px;
+	}
 }
-.sidenav-icon svg { width: 22px; height: 22px; }
-
-/* Label text - hidden until expanded */
-.sidenav-text {
-	opacity: 0;
-	transition: opacity var(--nav-transition);
-	pointer-events: none;
-	overflow: hidden;
-}
-.sidenav.expanded .sidenav-text { opacity: 1; }
 
 /* Sidenav spacer - fills space between main navigation and developer docs */
 .sidenav-spacer {

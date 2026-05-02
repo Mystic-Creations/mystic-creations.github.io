@@ -4,7 +4,6 @@
 	display: flex;
 	align-items: center;
 	gap: 10px;
-	width: 100%;
 	padding: 9px;
 	border-radius: 10px;
 	border: 2px solid transparent;
@@ -16,7 +15,21 @@
 	text-decoration: none;
 	white-space: nowrap;
 	position: relative;
-	transition: color 0.15s, background 0.15s;
+	transition: color 0.15s, background 0.15s, gap var(--nav-transitions);
+}
+@media (orientation: landscape) {
+	.sidenav-btn {
+		width: 100%;
+	}
+}
+@media (orientation: portrait) {
+	.sidenav-btn {
+		height: 100%;
+	}
+
+	.sidenav:not(.expanded) .sidenav-btn {
+		gap: 0px;
+	}
 }
 
 .sidenav-btn::before {
@@ -56,11 +69,16 @@
 /* Label text - hidden until expanded */
 .sidenav-text {
 	opacity: 0;
-	transition: opacity var(--nav-transition);
+	transition: opacity var(--nav-transition), width var(--nav-transition);
 	pointer-events: none;
 	overflow: hidden;
 }
 .sidenav.expanded .sidenav-text { opacity: 1; }
+@media (orientation: portrait) {
+	.sidenav:not(.expanded) .sidenav-text {
+		width: 0px;
+	}
+}
 
 /* Sidenav spacer - fills space between main navigation and developer docs */
 .sidenav-spacer {

@@ -1,15 +1,26 @@
 /* Footer - full width minus nav */
 .site-footer {
-	width: calc(100% - var(--nav-collapsed-width));
-	margin-left: var(--nav-collapsed-width);
 	flex-shrink: 0;
 	background: linear-gradient(to bottom, var(--tab-grad-light), var(--tab-grad-dark));
 	border-top: 1px solid color-mix(in srgb, var(--tab-outln-grad-dark) 25%, transparent);
-	transition: width var(--nav-transition), margin-left var(--nav-transition);
 }
-body.nav-open .site-footer {
-	width: calc(100% - var(--nav-expanded-width));
-	margin-left: var(--nav-expanded-width);
+
+@media (orientation: landscape) {
+	.site-footer {
+		width: calc(100% - var(--nav-collapsed-width));
+		margin-left: var(--nav-collapsed-width);
+		transition: width var(--nav-transition), margin-left var(--nav-transition);
+	}
+
+	body.nav-open .site-footer {
+		width: calc(100% - var(--nav-expanded-width));
+		margin-left: var(--nav-expanded-width);
+	}
+}
+@media (orientation: portrait) {
+	.site-footer {
+		width: 100%;
+	}
 }
 
 .footer-logo {
